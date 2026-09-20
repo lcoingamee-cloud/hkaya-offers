@@ -576,7 +576,7 @@
         <div class="price-label">Prix total TTC</div>
         <div class="price-label" style="font-size:11px; margin-top:2px;">السعر الإجمالي</div>
       </div>
-      <div class="price-value">249 DH DH</div>
+      <div class="price-value">300 DH</div>
     </div>
 
     <div class="delivery-note">
@@ -587,8 +587,8 @@
   <div class="divider"></div>
 
   <div class="form-card">
-    <div class="form-title">🛍️ Commander maintenant</div>
-    <div class="form-subtitle">Remplissez le formulaire — nous vous contactons sous 24h / أكملوا النموذج وسنتواصل معكم</div>
+    <div class="form-title">🛍️ Commander maintenant — وخلّي علينا الباقي</div>
+    <div class="form-subtitle">✨ Remplissez vos infos, on prépare votre commande — عمر معلوماتك وخلي علينا الباقي</div>
 
     <form id="orderForm" novalidate>
 
@@ -607,40 +607,40 @@
       <div class="price-summary">
         <div class="price-summary-row">
           <span class="label-bi">Prix unitaire<span class="ar">السعر للوحدة</span></span>
-          <span id="unitPriceDisplay">249 DH DH</span>
+          <span id="unitPriceDisplay">300 DH</span>
         </div>
         <div class="price-summary-row total">
-          <span class="label-bi">Total à payer<span class="ar">المجموع الواجب دفعه</span></span>
-          <span id="totalDisplay">249 DH DH</span>
+          <span class="label-bi">💰 À payer à la livraison<span class="ar">الدفع عند الاستلام (COD)</span></span>
+          <span id="totalDisplay">300 DH</span>
         </div>
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="fullname">Nom complet <span class="required">*</span></label>
+        <label class="form-label" for="fullname">👤 Votre nom <span style="font-family:'Noto Sans Arabic',sans-serif; font-weight:400; color:var(--gray);">— الاسم الكامل</span> <span class="required">*</span></label>
         <input class="form-input" type="text" id="fullname" placeholder="Ex: Fatima Zahra Benali" required>
         <div class="error-msg" id="err-fullname">Veuillez entrer votre nom complet</div>
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="phone">Téléphone valide <span class="required">*</span></label>
+        <label class="form-label" for="phone">📱 Votre numéro <span style="font-family:'Noto Sans Arabic',sans-serif; font-weight:400; color:var(--gray);">— رقم الهاتف</span> <span class="required">*</span></label>
         <input class="form-input" type="tel" id="phone" placeholder="Ex: 0612345678" required>
         <div class="error-msg" id="err-phone">Veuillez entrer un numéro de téléphone valide (10 chiffres)</div>
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="city">Ville <span class="required">*</span></label>
+        <label class="form-label" for="city">📍 Votre ville <span style="font-family:'Noto Sans Arabic',sans-serif; font-weight:400; color:var(--gray);">— المدينة</span> <span class="required">*</span></label>
         <input class="form-input" type="text" id="city" placeholder="Ex: Casablanca">
         <div class="error-msg" id="err-city">Veuillez entrer votre ville</div>
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="address">Adresse exacte <span class="required">*</span></label>
+        <label class="form-label" for="address">🏠 Votre adresse <span style="font-family:'Noto Sans Arabic',sans-serif; font-weight:400; color:var(--gray);">— عنوان التوصيل</span> <span class="required">*</span></label>
         <input class="form-input" type="text" id="address" placeholder="Ex: Rue Ibn Khaldoun, Appt 3, Maarif">
         <div class="error-msg" id="err-address">Veuillez entrer votre adresse complète</div>
       </div>
 
       <div class="form-group">
-        <label class="form-label" for="note">Note / Demande spéciale <span style="color:var(--gray); font-weight:400">(optionnel)</span></label>
+        <label class="form-label" for="note">💌 Un petit mot ? <span style="font-family:'Noto Sans Arabic',sans-serif; font-weight:400; color:var(--gray);">— ملاحظة أو طلب خاص</span> <span style="color:var(--gray); font-weight:400">(optionnel)</span></label>
         <textarea class="form-input" id="note" placeholder="Ex: Ajouter un message cadeau personnalisé..."></textarea>
       </div>
 
@@ -678,7 +678,7 @@
 const WEBHOOK_URL = 'https://mediumslateblue-wildcat-120426.hostingersite.com/webhook/hkaya-orders';
 const OFFER_ID = 'HK001';
 const OFFER_NAME = 'Pink Love Box';
-const UNIT_PRICE = parseFloat(('249 DH' + '').replace(',', '.')) || 0;
+const UNIT_PRICE = parseFloat(('300' + '').replace(',', '.')) || 0;
 
 function formatDH(n) {
   return (n % 1 === 0 ? n.toFixed(0) : n.toFixed(2)) + ' DH';
