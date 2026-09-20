@@ -280,6 +280,111 @@
     min-height: 90px;
   }
 
+  /* QUANTITY SELECTOR */
+  .qty-block {
+    margin-bottom: 20px;
+  }
+
+  .qty-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .qty-btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 10px;
+    border: 2px solid var(--purple-light);
+    background: var(--purple-bg);
+    color: var(--purple);
+    font-size: 22px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s, color 0.2s, transform 0.1s;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+  }
+
+  .qty-btn:hover {
+    background: var(--purple-light);
+    color: var(--white);
+  }
+
+  .qty-btn:active {
+    transform: scale(0.93);
+  }
+
+  .qty-input {
+    width: 74px;
+    text-align: center;
+    padding: 12px 8px;
+    border: 2px solid #e9ecef;
+    border-radius: 10px;
+    font-size: 18px;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark);
+    background: var(--gray-light);
+    -moz-appearance: textfield;
+  }
+
+  .qty-input::-webkit-outer-spin-button,
+  .qty-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* PRICE SUMMARY */
+  .price-summary {
+    background: var(--gray-light);
+    border-radius: 12px;
+    padding: 16px 18px;
+    margin-bottom: 24px;
+  }
+
+  .price-summary-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: var(--gray);
+    padding: 6px 0;
+    gap: 12px;
+  }
+
+  .price-summary-row .label-bi {
+    line-height: 1.4;
+  }
+
+  .price-summary-row .label-bi .ar {
+    display: block;
+    font-family: 'Noto Sans Arabic', sans-serif;
+    font-size: 13px;
+  }
+
+  .price-summary-row.total {
+    border-top: 1px dashed var(--pink-light);
+    margin-top: 6px;
+    padding-top: 14px;
+    font-weight: 700;
+    color: var(--dark);
+  }
+
+  .price-summary-row.total .label-bi {
+    font-size: 15px;
+  }
+
+  .price-summary-row.total #totalDisplay {
+    color: var(--pink);
+    font-size: 22px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
   /* SUBMIT BUTTON */
   .btn-order {
     width: 100%;
@@ -380,6 +485,16 @@
     margin-bottom: 8px;
   }
 
+  .success-recap {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark);
+    background: var(--pink-bg);
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin-bottom: 16px;
+  }
+
   .success-contact {
     font-size: 13px;
     color: var(--purple);
@@ -453,7 +568,7 @@
 
     <div class="included-title">Ce qui est inclus</div>
     <div class="items-grid">
-      <span class="item-pill">Candle</span><span class="item-pill">Chocolate</span><span class="item-pill">Love Card</span><span class="item-pill">Mini Teddy</span>
+      <span class="item-pill">Candle</span><span class="item-pill">Chocolate</span><span class="item-pill">Love Card</span><span class="item-pill">Mini mirror</span>
     </div>
 
     <div class="price-row">
@@ -476,6 +591,29 @@
     <div class="form-subtitle">Remplissez le formulaire — nous vous contactons sous 24h / أكملوا النموذج وسنتواصل معكم</div>
 
     <form id="orderForm" novalidate>
+
+      <div class="qty-block">
+        <label class="form-label label-bi">
+          Quantité
+          <span class="ar" style="display:block; font-family:'Noto Sans Arabic',sans-serif; font-size:13px; font-weight:400; color:var(--gray);">الكمية</span>
+        </label>
+        <div class="qty-controls">
+          <button type="button" class="qty-btn" id="qtyMinus" aria-label="Diminuer la quantité">−</button>
+          <input type="number" id="quantity" class="qty-input" value="1" min="1" max="20" inputmode="numeric">
+          <button type="button" class="qty-btn" id="qtyPlus" aria-label="Augmenter la quantité">+</button>
+        </div>
+      </div>
+
+      <div class="price-summary">
+        <div class="price-summary-row">
+          <span class="label-bi">Prix unitaire<span class="ar">السعر للوحدة</span></span>
+          <span id="unitPriceDisplay">249 DH DH</span>
+        </div>
+        <div class="price-summary-row total">
+          <span class="label-bi">Total à payer<span class="ar">المجموع الواجب دفعه</span></span>
+          <span id="totalDisplay">249 DH DH</span>
+        </div>
+      </div>
 
       <div class="form-group">
         <label class="form-label" for="fullname">Nom complet <span class="required">*</span></label>
@@ -524,6 +662,7 @@
     <div class="success-title">Commande confirmée ! 🎉</div>
     <div class="success-text">Merci pour votre confiance ! Votre commande a bien été reçue.</div>
     <div class="success-text">شكرًا لثقتك بنا! تم استلام طلبك بنجاح.</div>
+    <div class="success-recap" id="successRecap"></div>
     <div class="success-contact">📲 Nous vous contacterons sous 24h<br>على واتساب أو إنستغرام لتأكيد طلبك</div>
     <button class="btn-close" onclick="document.getElementById('successOverlay').classList.remove('show')">Fermer</button>
   </div>
@@ -539,6 +678,44 @@
 const WEBHOOK_URL = 'https://mediumslateblue-wildcat-120426.hostingersite.com/webhook/hkaya-orders';
 const OFFER_ID = 'HK001';
 const OFFER_NAME = 'Pink Love Box';
+const UNIT_PRICE = parseFloat(('249 DH' + '').replace(',', '.')) || 0;
+
+function formatDH(n) {
+  return (n % 1 === 0 ? n.toFixed(0) : n.toFixed(2)) + ' DH';
+}
+
+function getQuantity() {
+  const input = document.getElementById('quantity');
+  let qty = parseInt(input.value);
+  if (!qty || qty < 1) qty = 1;
+  if (qty > 20) qty = 20;
+  input.value = qty;
+  return qty;
+}
+
+function updateTotal() {
+  const qty = getQuantity();
+  const total = UNIT_PRICE * qty;
+  document.getElementById('unitPriceDisplay').textContent = formatDH(UNIT_PRICE);
+  document.getElementById('totalDisplay').textContent = formatDH(total);
+}
+
+document.getElementById('qtyMinus').addEventListener('click', function() {
+  const input = document.getElementById('quantity');
+  input.value = Math.max(1, (parseInt(input.value) || 1) - 1);
+  updateTotal();
+});
+
+document.getElementById('qtyPlus').addEventListener('click', function() {
+  const input = document.getElementById('quantity');
+  input.value = Math.min(20, (parseInt(input.value) || 1) + 1);
+  updateTotal();
+});
+
+document.getElementById('quantity').addEventListener('input', updateTotal);
+document.getElementById('quantity').addEventListener('change', updateTotal);
+
+updateTotal();
 
 function showError(id, show) {
   const el = document.getElementById(id);
@@ -562,6 +739,8 @@ document.getElementById('orderForm').addEventListener('submit', async function(e
   const city = document.getElementById('city').value.trim();
   const address = document.getElementById('address').value.trim();
   const note = document.getElementById('note').value.trim();
+  const quantity = getQuantity();
+  const total = (UNIT_PRICE * quantity);
 
   let valid = true;
 
@@ -588,6 +767,9 @@ document.getElementById('orderForm').addEventListener('submit', async function(e
         city: city,
         address: address,
         note: note,
+        quantity: quantity,
+        unit_price: UNIT_PRICE,
+        total: total,
         source: 'landing_page',
         timestamp: new Date().toISOString()
       })
@@ -596,10 +778,14 @@ document.getElementById('orderForm').addEventListener('submit', async function(e
     console.log('Webhook error:', err);
   }
 
+  document.getElementById('successRecap').textContent =
+    'Quantité : ' + quantity + '  •  Total : ' + formatDH(total);
+
   btn.disabled = false;
   btn.textContent = '🎁 Confirmer ma commande';
   document.getElementById('successOverlay').classList.add('show');
   document.getElementById('orderForm').reset();
+  updateTotal();
 });
 </script>
 
