@@ -576,11 +576,11 @@
         <div class="price-label">Prix total TTC</div>
         <div class="price-label" style="font-size:11px; margin-top:2px;">السعر الإجمالي</div>
       </div>
-      <div class="price-value">300 DH</div>
+      <div class="price-value">150 DH</div>
     </div>
 
     <div class="delivery-note">
-      📦 Statut : <strong style="color:#28a745">✅ Disponible</strong> &nbsp;|&nbsp; Livraison 2–4 jours ouvrables
+      📦 Prêt à commander — جاهز للطلب : <strong style="color:#28a745">✅ Disponible</strong> &nbsp;|&nbsp; 🚚 Livraison rapide & suivi, entre de bonnes mains — توصيل سريع وتتبع مستمر، طلبك بين يدين أمينة
     </div>
   </div>
 
@@ -607,11 +607,11 @@
       <div class="price-summary">
         <div class="price-summary-row">
           <span class="label-bi">Prix unitaire<span class="ar">السعر للوحدة</span></span>
-          <span id="unitPriceDisplay">300 DH</span>
+          <span id="unitPriceDisplay">150 DH</span>
         </div>
         <div class="price-summary-row total">
           <span class="label-bi">💰 À payer à la livraison<span class="ar">الدفع عند الاستلام (COD)</span></span>
-          <span id="totalDisplay">300 DH</span>
+          <span id="totalDisplay">150 DH</span>
         </div>
       </div>
 
@@ -678,7 +678,7 @@
 const WEBHOOK_URL = 'https://mediumslateblue-wildcat-120426.hostingersite.com/webhook/hkaya-orders';
 const OFFER_ID = 'HK001';
 const OFFER_NAME = 'Pink Love Box';
-const UNIT_PRICE = parseFloat(('300' + '').replace(',', '.')) || 0;
+const UNIT_PRICE = parseFloat(('150' + '').replace(',', '.')) || 0;
 
 function formatDH(n) {
   return (n % 1 === 0 ? n.toFixed(0) : n.toFixed(2)) + ' DH';
