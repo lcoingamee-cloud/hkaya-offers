@@ -576,7 +576,7 @@
         <div class="price-label">Prix total TTC</div>
         <div class="price-label" style="font-size:11px; margin-top:2px;">السعر الإجمالي</div>
       </div>
-      <div class="price-value"> DH</div>
+      <div class="price-value">220 DH DH</div>
     </div>
 
     <div class="delivery-note">
@@ -607,11 +607,11 @@
       <div class="price-summary">
         <div class="price-summary-row">
           <span class="label-bi">Prix unitaire<span class="ar">السعر للوحدة</span></span>
-          <span id="unitPriceDisplay"> DH</span>
+          <span id="unitPriceDisplay">220 DH DH</span>
         </div>
         <div class="price-summary-row total">
           <span class="label-bi">💰 À payer à la livraison<span class="ar">الدفع عند الاستلام (COD)</span></span>
-          <span id="totalDisplay"> DH</span>
+          <span id="totalDisplay">220 DH DH</span>
         </div>
       </div>
 
@@ -678,7 +678,7 @@
 const WEBHOOK_URL = 'https://mediumslateblue-wildcat-120426.hostingersite.com/webhook/hkaya-orders';
 const OFFER_ID = 'HK014';
 const OFFER_NAME = 'Beauty of Joseon Revive Eye Serum';
-const UNIT_PRICE = parseFloat(('' + '').replace(',', '.')) || 0;
+const UNIT_PRICE = parseFloat(('220 DH' + '').replace(',', '.')) || 0;
 
 function formatDH(n) {
   return (n % 1 === 0 ? n.toFixed(0) : n.toFixed(2)) + ' DH';
