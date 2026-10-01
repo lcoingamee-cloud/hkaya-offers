@@ -564,7 +564,7 @@
   <div class="product-card">
     <h1 class="offer-name"></h1>
     <span class="offer-category"></span>
-    <p class="offer-description">🛍️ Description commerciale :• Grande box Hkaya avec une routine K-beauty complète• 7 produits pour une expérience skincare premium• Couvre nettoyage, préparation, soin, hydratation et protection solaire• Idéale pour un cadeau important ou une occasion spéciale• Forte valeur perçue grâce à la diversité des produits• Peut devenir l’offre skincare premium phare de Hkaya🔬 Description scientifique & applicable & pratique :• Double nettoyage avec huile puis nettoyant aqueux• Toner pour préparer et hydrater la peau• Essence et sérum pour les étapes de soin ciblées/hydratantes• Crème pour maintenir le confort et l’hydratation• SPF50+ comme dernière étape du matin• Tous les produits ne sont pas obligatoires à chaque routine : adapter selon le type de peau, les besoins et la tolérance</p>
+    <p class="offer-description"></p>
 
     <div class="included-title">Ce qui est inclus</div>
     <div class="items-grid">
@@ -576,11 +576,11 @@
         <div class="price-label">Prix total TTC</div>
         <div class="price-label" style="font-size:11px; margin-top:2px;">السعر الإجمالي</div>
       </div>
-      <div class="price-value">1,090 DH DH</div>
+      <div class="price-value"> DH</div>
     </div>
 
     <div class="delivery-note">
-      📦 Prêt à commander — جاهز للطلب : <strong style="color:#dc3545">❌ Non disponible</strong> &nbsp;|&nbsp; 🚚 Livraison rapide & suivi, entre de bonnes mains — توصيل سريع وتتبع مستمر، طلبك بين يدين أمينة
+      📦 Prêt à commander — جاهز للطلب : <strong style="color:#28a745">✅ Disponible</strong> &nbsp;|&nbsp; 🚚 Livraison rapide & suivi, entre de bonnes mains — توصيل سريع وتتبع مستمر، طلبك بين يدين أمينة
     </div>
   </div>
 
@@ -607,11 +607,11 @@
       <div class="price-summary">
         <div class="price-summary-row">
           <span class="label-bi">Prix unitaire<span class="ar">السعر للوحدة</span></span>
-          <span id="unitPriceDisplay">1,090 DH DH</span>
+          <span id="unitPriceDisplay"> DH</span>
         </div>
         <div class="price-summary-row total">
           <span class="label-bi">💰 À payer à la livraison<span class="ar">الدفع عند الاستلام (COD)</span></span>
-          <span id="totalDisplay">1,090 DH DH</span>
+          <span id="totalDisplay"> DH</span>
         </div>
       </div>
 
@@ -678,7 +678,7 @@
 const WEBHOOK_URL = 'https://mediumslateblue-wildcat-120426.hostingersite.com/webhook/hkaya-orders';
 const OFFER_ID = '';
 const OFFER_NAME = '';
-const UNIT_PRICE = parseFloat(('1,090 DH' + '').replace(',', '.')) || 0;
+const UNIT_PRICE = parseFloat(('' + '').replace(',', '.')) || 0;
 
 function formatDH(n) {
   return (n % 1 === 0 ? n.toFixed(0) : n.toFixed(2)) + ' DH';
